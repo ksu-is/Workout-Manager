@@ -10,7 +10,7 @@ Sprint 1
 Sprint 2
 - [x] CREATE A .PY FILE FOR CODE
 - [x] START CODING —- ADD COMMITS
-- [] TAKE THE SPRINT 2 QUIZ
+- [x] TAKE THE SPRINT 2 QUIZ
 
 
 Sprint 3
