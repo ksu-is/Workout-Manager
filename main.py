@@ -65,9 +65,10 @@ class WorkoutManager:
 
     # connect choices on menu to code above
     def run(base):
+    user_input = input("Please enter your name: ")
         while True:
             base.workout_menu()
-            choice = input("Enter your choice: ")
+            choice = input(f"Hello, {user_input}! Please enter your menu choice: ")
             if choice == '1':
                 base.view_workouts()
             elif choice == '2':
