@@ -1,4 +1,4 @@
-# create workout manager
+# create workout manager as package
 class WorkoutManager:
     def __init__(base):
         base.workouts = []
@@ -12,26 +12,28 @@ class WorkoutManager:
         print("4. Delete a Workout")
         print("5. Exit")
 
-    # define view workouts
+    # define view workouts module
     def view_workouts(base):
         if not base.workouts:
             print("No workouts added.")
+    #sequence the workouts by adding a number to each workout added
         else:
-            for i, workout in enumerate(base.workouts):
+            for index, workout in enumerate(base.workouts):
                 print(f"{i + 1}. {workout[0]} - {workout[1]} reps, {workout[2]} sets")
 
-    # define add workouts
+    # define add workouts module
     def add_workout(base):
         name = input("Enter the workout name: ")
         reps = input("Enter the number of reps: ")
         sets = input("Enter the number of sets: ")
+    #add only if the reps and sets inputs are digits
         if name and reps.isdigit() and sets.isdigit():
             base.workouts.append((name, int(reps), int(sets)))
             print(f"Workout '{name}' added successfully!")
         else:
             print("Invalid input. Please try again.")
 
-    # define edit workouts
+    # define edit workouts module
     def edit_workout(base):
         base.view_workouts()
         try:
@@ -47,10 +49,8 @@ class WorkoutManager:
                     print("Invalid input. Please try again.")
             else:
                 print("Invalid workout number. Please try again.")
-        except ValueError:
-            print("Invalid input. Please enter a number.")
 
-    # define delete workouts
+    # define delete workouts module
     def delete_workout(base):
         base.view_workouts()
         try:
@@ -60,10 +60,8 @@ class WorkoutManager:
                 print(f"Workout '{deleted_workout[0]}' deleted successfully.")
             else:
                 print("Invalid workout number. Please try again.")
-        except ValueError:
-            print("Invalid input. Please enter a number.")
 
-    # connect choices on menu to code above
+    # connect choices on menu to modules above
     def run(base):
     user_input = input("Please enter your name: ")
         while True:
@@ -83,7 +81,7 @@ class WorkoutManager:
             else:
                 print("Invalid choice. Please try again.")
 
-# call to run the code
+# call to run the code from the top moodule
 if __name__ == "__main__":
     manager = WorkoutManager()
     manager.run()
