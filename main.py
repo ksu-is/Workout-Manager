@@ -49,6 +49,9 @@ class WorkoutManager:
                     print("Invalid input. Please try again.")
             else:
                 print("Invalid workout number. Please try again.")
+            except ValueError:
+            print("Invalid input. Please enter a number.")
+
 
     # define delete workouts module
     def delete_workout(base):
@@ -60,6 +63,8 @@ class WorkoutManager:
                 print(f"Workout '{deleted_workout[0]}' deleted successfully.")
             else:
                 print("Invalid workout number. Please try again.")
+            except ValueError:
+            print("Invalid input. Please enter a number.")
 
     # connect choices on menu to modules above
     def run(base):
